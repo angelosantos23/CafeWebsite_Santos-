@@ -1,0 +1,67 @@
+:root{
+    --bg:#fff8f2;
+    --accent:#6b3e26;
+    --muted:#8b6b5a;
+    --card:#fff;
+    --max-width:1100px;
+    --radius:12px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{
+    margin:0;
+    background:linear-gradient(180deg,var(--bg),#fff);
+    color:var(--accent);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.4;
+}
+.container{max-width:var(--max-width);margin:0 auto;padding:20px}
+ 
+/* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,#a66,#632);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav{display:flex;gap:16px}
+    a{color:var(--accent);text-decoration:none}
+    .cta{background:var(--accent);color:#fff;padding:8px 14px;border-radius:8px}
+ 
+/* Hero */
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:28px 0}
+    .hero-left h1{margin:0;font-size:28px}
+    .hero-left p{color:var(--muted);margin-top:8px}
+    .hero-cta{margin-top:14px}
+    .hero-cta a{display:inline-block}
+ 
+    .hero-right{display:flex;justify-content:center}
+    .cup{width:220px;height:220px;border-radius:50%;background:linear-gradient(180deg,#f6e8df,#f0d9c9);box-shadow:0 6px 18px rgba(98,58,32,0.12);display:flex;align-items:center;justify-content:center;font-size:40px;color:var(--accent)}
+ 
+/* Menu cards */
+    .menu{display:grid;grid-template-columns:repeat(1,1fr);gap:18px;margin:28px 0}
+    .card{background:var(--card);padding:14px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(100,60,30,0.06);display:flex;gap:12px;align-items:center}
+    .card .img{width:72px;height:72px;border-radius:12px;background:linear-gradient(180deg,#e7c7b1,#f7efe8);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .card h3{margin:0;font-size:18px}
+    .price{margin-left:auto;font-weight:700}
+ 
+/* About & Contact */
+    .grid-2{display:grid;grid-template-columns:1fr;gap:18px;margin:28px 0}
+    .about, .contact{background:var(--card);padding:16px;border-radius:10px}
+ 
+footer{padding:20px 0;color:var(--muted);text-align:center}
+ 
+/* Responsive */
+    @media(min-width:700px){
+    .hero{grid-template-columns:1fr 420px}
+    .menu{grid-template-columns:repeat(2,1fr)}
+    .grid-2{grid-template-columns:1fr 360px}
+    .hero-left h1{font-size:36px}
+    .cup{width:260px;height:260px;font-size:48px}
+    }
+    @media(min-width:1000px){
+      .menu{grid-template-columns:repeat(3,1fr)}
+    }
+ 
+/* Small tweaks */
+    .nav-links{display:flex;gap:12px;align-items:center}
+    .mobile-hide{display:none}
+    @media(min-width:700px){.mobile-hide{display:block}}
